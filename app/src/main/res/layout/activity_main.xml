@@ -6,16 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/rcView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toTopOf="@+id/edMessage"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/bSend"
@@ -38,6 +28,16 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/bSend"
         app:layout_constraintEnd_toEndOf="@+id/bSend"
-        app:layout_constraintStart_toStartOf="@+id/bSend" />
+        app:layout_constraintStart_toStartOf="@+id/bSend"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/edMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

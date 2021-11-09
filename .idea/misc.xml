@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/User/AndroidStudioProjects/ShibariChat/app/src/main/res/layout/activity_main.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ShibariChat/app/src/main/res/layout/activity_main.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/User/AndroidStudioProjects/ShibariChat/app/src/main/res/layout/activity_sign_in.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ShibariChat/app/src/main/res/layout/user_list_item.xml" value="0.5" />
         <entry key="..\:/Users/User/AndroidStudioProjects/ShibariChat/app/src/main/res/menu/main_menu.xml" value="1.2321428571428572" />
       </map>
     </option>
