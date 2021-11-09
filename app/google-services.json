@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "12441586972-i9vc9j1n8d159fp7kpe9tgrjg09ud8dt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shibarichat",
+            "certificate_hash": "15e2b5a070ba09ba7a2a14d1dc2b22ceabe8d9df"
+          }
+        },
+        {
           "client_id": "12441586972-37se0cgek11ehd9b26sj5lo5j0p84cqt.apps.googleusercontent.com",
           "client_type": 3
         }
