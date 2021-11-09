@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "12441586972",
+    "firebase_url": "https://shibarichat-e805c-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "shibarichat-e805c",
+    "storage_bucket": "shibarichat-e805c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:12441586972:android:0ef0b11212ac27d2d07ed9",
+        "android_client_info": {
+          "package_name": "com.example.shibarichat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "12441586972-37se0cgek11ehd9b26sj5lo5j0p84cqt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbdw0LqXXTH4yOm5xOrA8wHWpNM2xO0KI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "12441586972-37se0cgek11ehd9b26sj5lo5j0p84cqt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
