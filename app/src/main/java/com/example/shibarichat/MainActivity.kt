@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.EditText
+import androidx.core.text.set
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.shibarichat.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -35,9 +38,21 @@ class MainActivity : AppCompatActivity() {
 
         binding.bSend.setOnClickListener{
             myRef.child(myRef.push().key ?: "blablabla").setValue(User(auth.currentUser?.displayName, binding.edMessage.text.toString()))
+            clearEditText()
         }
         onCangeListener(myRef)
         initRcView()
+
+    }
+
+    private fun scrollRView(){
+        var rView = findViewById<RecyclerView>(R.id.rcView)
+        
+    }
+
+    private fun clearEditText(){
+        var edMessage = findViewById<EditText>(R.id.edMessage)
+        edMessage.setText("")
     }
 
     private fun initRcView() = with(binding){
