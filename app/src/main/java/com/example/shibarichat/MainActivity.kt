@@ -9,6 +9,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.core.text.set
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     lateinit var auth: FirebaseAuth
     lateinit var adapter: UserAdapter
+    private lateinit var arr: List<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,13 +41,14 @@ class MainActivity : AppCompatActivity() {
 
         val database = Firebase.database
         val myRef = database.getReference("message")
-        myRef.get().addOnSuccessListener {
-            val map = (it.value)
-            Log.i("firebase", "aaaaaaaaaaaaaaaaaaaa $map")
 
-
-        }.addOnFailureListener{
+        var button = findViewById(R.id.editTextTextPersonName2) as Button
+        button.setOnClickListener {
+            onCangeListener(myRef)
+            initRcView()
         }
+
+
 
 
 
@@ -61,7 +64,6 @@ class MainActivity : AppCompatActivity() {
         bScanner?.setOnClickListener {
             startActivity(Intent(this, CameraActivity::class.java))
         }
-
     }
 
     private fun scrollRView(){
@@ -103,6 +105,7 @@ class MainActivity : AppCompatActivity() {
                     if (user != null) list.add(user)
                 }
                 adapter.submitList(list)
+                Log.i("firebase", "$list")
             }
 
             override fun onCancelled(error: DatabaseError) {

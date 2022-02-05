@@ -38,7 +38,6 @@ class CameraActivity : AppCompatActivity(), ZBarScannerView.ResultHandler {
     }
 
     override fun handleResult(result: Result?) {
-        Log.d("MyLog","Result:${result?.contents}")
 //        Toast.makeText(this, "${result?.contents}", Toast.LENGTH_SHORT).show()
 
         val builder = AlertDialog.Builder(this)

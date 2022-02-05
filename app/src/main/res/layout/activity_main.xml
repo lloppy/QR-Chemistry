@@ -57,8 +57,8 @@
                     android:layout_width="0dp"
                     android:layout_height="70dp"
                     android:layout_marginStart="20dp"
+                    android:layout_marginTop="60dp"
                     android:layout_marginEnd="20dp"
-                    android:layout_marginTop="40dp"
                     android:backgroundTint="@color/blue"
                     android:text="Сканировать новое задание"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -76,33 +76,128 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/main" />
 
-                <EditText
+                <Button
                     android:id="@+id/editTextTextPersonName2"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_marginTop="40dp"
                     android:background="@color/blue"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Ввести ответ"
                     android:gravity="center"
+                    android:hint="Ввести ответ"
                     android:textColor="@color/white"
+                    android:inputType="textPersonName"
+                    android:textColorHint="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/yellow"
+                    android:ems="10"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:hint="Ввести ответ"
+                    android:inputType="textPersonName"
+                    android:textColorHint="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bt" />
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/orange"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:hint="Ввести ответ"
+                    android:inputType="textPersonName"
+                    android:textColorHint="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.502"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+
+                <Button
+                    android:id="@+id/editTextTextPersonName5"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="40dp"
+                    android:backgroundTint="@color/dark_pink"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="Получить пятерку!"
+                    android:textColorHint="@color/white"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+                <EditText
+                    android:id="@+id/bt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/green"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Ввести ответ"
+                    android:textColor="@color/white"
+                    android:inputType="textPersonName"
+                    android:textColorHint="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+
+                <EditText
+                    android:id="@+id/bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/lgh_green"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Ввести ответ"
+                    android:textColor="@color/white"
+                    android:inputType="textPersonName"
+                    android:textColorHint="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bt2" />
 
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
-                    android:text="Мой прогресс"
+                    android:layout_marginTop="120dp"
+                    android:gravity="center"
+                    android:text="Мой прогресс:"
                     android:textColor="@color/dark"
                     android:textSize="20dp"
-                    android:gravity="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/button" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="0dp"
+                    android:layout_height="464dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
+                    app:srcCompat="@drawable/back" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

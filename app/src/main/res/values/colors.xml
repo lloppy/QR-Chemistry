@@ -15,7 +15,10 @@
     <color name="dark">#324A58</color>
     <color name="blue">#428DFC</color>
     <color name="lgh_green">#85DACC</color>
+    <color name="green">#6AC69F</color>
     <color name="dark_pink">#DE6381</color>
 
+    <color name="yellow">#FDD668</color>
+    <color name="orange">#EDC16C</color>
 
 </resources>
