@@ -1,10 +1,13 @@
 package com.example.shibarichat
 
+import android.content.Intent
 import android.graphics.drawable.BitmapDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.EditText
 import androidx.core.text.set
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,6 +22,8 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -29,12 +34,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         auth = Firebase.auth
         setUpActBar()
 
         val database = Firebase.database
         val myRef = database.getReference("message")
+        myRef.get().addOnSuccessListener {
+            val map = (it.value)
+            Log.i("firebase", "aaaaaaaaaaaaaaaaaaaa $map")
+
+
+        }.addOnFailureListener{
+        }
+
+
 
         binding.bSend.setOnClickListener{
             myRef.child(myRef.push().key ?: "blablabla").setValue(User(auth.currentUser?.displayName, binding.edMessage.text.toString()))
@@ -43,11 +56,17 @@ class MainActivity : AppCompatActivity() {
         onCangeListener(myRef)
         initRcView()
 
+        var bScanner: Button? = null
+        bScanner = findViewById(R.id.button) as Button
+        bScanner?.setOnClickListener {
+            startActivity(Intent(this, CameraActivity::class.java))
+        }
+
     }
 
     private fun scrollRView(){
         var rView = findViewById<RecyclerView>(R.id.rcView)
-        
+
     }
 
     private fun clearEditText(){

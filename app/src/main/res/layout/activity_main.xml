@@ -1,47 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/new_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
     tools:context=".MainActivity">
 
 
-    <Button
-        android:id="@+id/bSend"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Send"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+                <Button
+                    android:id="@+id/bSend"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:visibility="gone"
+                    android:text="Send"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/edMessage"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:textColor="@color/white"
-        android:textColorHint="@color/purple_501"
-        android:hint="@string/message"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/bSend"
-        app:layout_constraintEnd_toEndOf="@+id/bSend"
-        app:layout_constraintStart_toStartOf="@+id/bSend"
-        tools:ignore="TouchTargetSizeCheck" />
+                <EditText
+                    android:id="@+id/edMessage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/purple_501"
+                    android:hint="@string/message"
+                    android:visibility="gone"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toTopOf="@+id/bSend"
+                    app:layout_constraintEnd_toEndOf="@+id/bSend"
+                    app:layout_constraintStart_toStartOf="@+id/bSend"
+                    tools:ignore="TouchTargetSizeCheck" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/edMessage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcView"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:visibility="gone"
+                    android:layout_marginBottom="100dp"
+                    app:layout_constraintBottom_toTopOf="@+id/edMessage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="40dp"
+                    android:backgroundTint="@color/blue"
+                    android:text="Сканировать новое задание"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="0dp"
+                    android:layout_height="383dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/main" />
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@color/blue"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Ввести ответ"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp"
+                    android:text="Мой прогресс"
+                    android:textColor="@color/dark"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
