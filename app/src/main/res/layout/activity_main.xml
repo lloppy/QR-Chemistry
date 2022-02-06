@@ -13,39 +13,91 @@
             android:id="@+id/container1"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
                 <Button
                     android:id="@+id/bSend"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    android:layout_width="53dp"
+                    android:layout_height="47dp"
                     android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:visibility="gone"
                     android:text="Send"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:textSize="7dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName2"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName2" />
+
+                <Button
+                    android:id="@+id/bSend2"
+                    android:layout_width="53dp"
+                    android:layout_height="47dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Send"
+                    android:visibility="gone"
+                    android:textSize="7dp"
+                    android:backgroundTint="@color/green"
+                    app:layout_constraintBottom_toBottomOf="@+id/bt2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/bt2" />
+
+                <Button
+                    android:id="@+id/bSend3"
+                    android:layout_width="53dp"
+                    android:layout_height="47dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Send"
+                    android:visibility="gone"
+                    android:textSize="7dp"
+                    android:backgroundTint="@color/lgh_green"
+                    app:layout_constraintBottom_toBottomOf="@+id/bt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/bt" />
+
+                <Button
+                    android:id="@+id/bSend4"
+                    android:layout_width="53dp"
+                    android:layout_height="47dp"
+                    android:backgroundTint="@color/yellow"
+                    android:layout_marginEnd="8dp"
+                    android:text="Send"
+                    android:visibility="gone"
+                    android:textSize="7dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName3" />
+
+                <Button
+                    android:id="@+id/bSend5"
+                    android:layout_width="53dp"
+                    android:layout_height="47dp"
+                    android:visibility="gone"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/orange"
+                    android:text="Send"
+                    android:textSize="7dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName4" />
 
                 <EditText
                     android:id="@+id/edMessage"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/purple_501"
                     android:hint="@string/message"
-                    android:visibility="gone"
                     android:inputType="textPersonName"
+                    android:textColor="@color/dark"
+                    android:textColorHint="@color/purple_501"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toTopOf="@+id/bSend"
                     app:layout_constraintEnd_toEndOf="@+id/bSend"
                     app:layout_constraintStart_toStartOf="@+id/bSend"
+                    app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName2"
                     tools:ignore="TouchTargetSizeCheck" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcView"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
                     android:visibility="gone"
+                    android:layout_height="0dp"
                     android:layout_marginBottom="100dp"
                     app:layout_constraintBottom_toTopOf="@+id/edMessage"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -71,12 +123,11 @@
                     android:layout_width="0dp"
                     android:layout_height="383dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/main" />
 
-                <Button
+                <EditText
                     android:id="@+id/editTextTextPersonName2"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
@@ -154,8 +205,8 @@
                     android:ems="10"
                     android:gravity="center"
                     android:hint="Ввести ответ"
-                    android:textColor="@color/white"
                     android:inputType="textPersonName"
+                    android:textColor="@color/white"
                     android:textColorHint="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

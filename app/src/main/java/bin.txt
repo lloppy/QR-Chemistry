@@ -1,0 +1,7 @@
+
+        database = Firebase.database.getReference("message")
+        val myRef = database
+        Log.i("firebase", "${myRef}")
+        myRef.child(myRef.push().key ?: "blablabla").setValue(User(auth.currentUser?.displayName, binding.edMessage.text.toString()))
+        onCangeListener(myRef)
+        initRcView()

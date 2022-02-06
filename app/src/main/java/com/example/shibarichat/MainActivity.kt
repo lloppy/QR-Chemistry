@@ -5,12 +5,17 @@ import android.graphics.drawable.BitmapDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
+import android.view.Gravity.CENTER_VERTICAL
+import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.core.text.set
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shibarichat.databinding.ActivityMainBinding
@@ -30,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     lateinit var auth: FirebaseAuth
     lateinit var adapter: UserAdapter
-    private lateinit var arr: List<String>
+    var FLAG = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,22 +47,60 @@ class MainActivity : AppCompatActivity() {
         val database = Firebase.database
         val myRef = database.getReference("message")
 
-        var button = findViewById(R.id.editTextTextPersonName2) as Button
-        button.setOnClickListener {
-            onCangeListener(myRef)
-            initRcView()
+        val send = binding.bSend
+        val send2 = binding.bSend2
+        val send3 = binding.bSend3
+        val send4 = binding.bSend4
+        val send5 = binding.bSend5
+
+        send.setOnClickListener{
+            myRef.setValue(binding.editTextTextPersonName2.text.toString())
+            binding.editTextTextPersonName2.hint = "Задание выполнено"
+            binding.editTextTextPersonName2.setText("")
+
+            send.isInvisible = true
+            send2.isVisible = true
         }
 
 
+        send2.setOnClickListener{
+            myRef.setValue(binding.bt2.text.toString())
+            binding.bt2.hint = "Задание выполнено"
+            binding.bt2.setText("")
 
+            send2.isInvisible = true
+            send3.isVisible = true
 
-
-        binding.bSend.setOnClickListener{
-            myRef.child(myRef.push().key ?: "blablabla").setValue(User(auth.currentUser?.displayName, binding.edMessage.text.toString()))
-            clearEditText()
         }
-        onCangeListener(myRef)
-        initRcView()
+
+        send3.setOnClickListener{
+            myRef.setValue(binding.bt.text.toString())
+            binding.bt.hint = "Задание выполнено"
+            binding.bt.setText("")
+
+            send3.isInvisible = true
+            send4.isVisible = true
+        }
+
+
+        send4.setOnClickListener{
+            myRef.setValue(binding.editTextTextPersonName3.text.toString())
+            binding.editTextTextPersonName3.hint = "Задание выполнено"
+            binding.editTextTextPersonName3.setText("")
+
+            send4.isInvisible = true
+            send5.isVisible = true
+        }
+
+        send5.setOnClickListener{
+            myRef.setValue(binding.editTextTextPersonName4.text.toString())
+            binding.editTextTextPersonName4.hint = "Задание выполнено"
+            binding.editTextTextPersonName4.setText("")
+
+            send5.isInvisible = true
+        }
+
+
 
         var bScanner: Button? = null
         bScanner = findViewById(R.id.button) as Button
@@ -68,7 +111,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun scrollRView(){
         var rView = findViewById<RecyclerView>(R.id.rcView)
-
     }
 
     private fun clearEditText(){
