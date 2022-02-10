@@ -5,15 +5,11 @@ import android.graphics.drawable.BitmapDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.Gravity
-import android.view.Gravity.CENTER_VERTICAL
-import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.core.text.set
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,10 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.shibarichat.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
@@ -37,24 +30,42 @@ class MainActivity : AppCompatActivity() {
     lateinit var adapter: UserAdapter
     var FLAG = true
 
+    lateinit var database: FirebaseDatabase
+    lateinit var myRef: DatabaseReference
+
+    private var currlat = ""
+    private var currlong = 0.0
+    private var decibel = 0.0
+    private lateinit var arr: List<Double>
+
+    var ansa = ""
+    var ansb = ""
+    var ansc = ""
+    var ansd = ""
+    var anse = ""
+    var mark = ""
+    lateinit var name:String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         auth = Firebase.auth
+        name = auth.currentUser!!.displayName.toString()
         setUpActBar()
 
-        val database = Firebase.database
-        val myRef = database.getReference("message")
 
         val send = binding.bSend
         val send2 = binding.bSend2
         val send3 = binding.bSend3
         val send4 = binding.bSend4
         val send5 = binding.bSend5
+        val send6 = binding.editTextTextPersonName5
 
         send.setOnClickListener{
-            myRef.setValue(binding.editTextTextPersonName2.text.toString())
+
+            ansa = binding.editTextTextPersonName2.text.toString()
+
             binding.editTextTextPersonName2.hint = "Задание выполнено"
             binding.editTextTextPersonName2.setText("")
 
@@ -63,8 +74,10 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+
         send2.setOnClickListener{
-            myRef.setValue(binding.bt2.text.toString())
+            ansb = binding.bt2.text.toString()
+
             binding.bt2.hint = "Задание выполнено"
             binding.bt2.setText("")
 
@@ -74,7 +87,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         send3.setOnClickListener{
-            myRef.setValue(binding.bt.text.toString())
+            ansc = binding.bt.text.toString()
             binding.bt.hint = "Задание выполнено"
             binding.bt.setText("")
 
@@ -84,7 +97,7 @@ class MainActivity : AppCompatActivity() {
 
 
         send4.setOnClickListener{
-            myRef.setValue(binding.editTextTextPersonName3.text.toString())
+            ansd = binding.editTextTextPersonName3.text.toString()
             binding.editTextTextPersonName3.hint = "Задание выполнено"
             binding.editTextTextPersonName3.setText("")
 
@@ -93,12 +106,29 @@ class MainActivity : AppCompatActivity() {
         }
 
         send5.setOnClickListener{
-            myRef.setValue(binding.editTextTextPersonName4.text.toString())
+            anse = binding.editTextTextPersonName4.text.toString()
+
+            database = Firebase.database
+            myRef = database.getReference("points")
+            myRef.child(myRef.push().key ?: "blablabla").setValue(Points(name, ansa, ansb, ansc, ansd, anse, mark))
+
             binding.editTextTextPersonName4.hint = "Задание выполнено"
             binding.editTextTextPersonName4.setText("")
 
             send5.isInvisible = true
+            Toast.makeText(this,
+                "Ты выполнил все задания по QR-кодам! Финальное задание - получить балл от Марины Павловны за активность на уроке",Toast.LENGTH_LONG).show()
         }
+
+
+        send6.setOnClickListener{
+            if (true.also { send5.isInvisible = it }){
+                Toast.makeText(this,
+                    "Если ты уже проявил активность на уроке, то твой результат скоро будет передан на базу данных и выставлен в дневник",Toast.LENGTH_LONG).show()
+            }
+        }
+
+
 
 
 
@@ -167,4 +197,6 @@ class MainActivity : AppCompatActivity() {
             }
         }.start()
     }
+
+
 }
