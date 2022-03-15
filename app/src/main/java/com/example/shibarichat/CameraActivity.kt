@@ -38,14 +38,16 @@ class CameraActivity : AppCompatActivity(), ZBarScannerView.ResultHandler {
     }
 
     override fun handleResult(result: Result?) {
+        if (result?.contents?.length != 16) { //16 символов не работают вообще
 //        Toast.makeText(this, "${result?.contents}", Toast.LENGTH_SHORT).show()
-
-        val builder = AlertDialog.Builder(this)
-        builder.setCancelable(false)
-            .setMessage("${result?.contents}")
-            .setPositiveButton("Выполнять!"
-            ) { dialog, id -> startActivity(Intent(this, MainActivity::class.java)) }
-        val alert = builder.create()
-        alert.show()
+            val builder = AlertDialog.Builder(this)
+            builder.setCancelable(false)
+                .setMessage("${result?.contents}")
+                .setPositiveButton(
+                    "Выполнять!"
+                ) { dialog, id -> startActivity(Intent(this, MainActivity::class.java)) }
+            val alert = builder.create()
+            alert.show()
+        }
     }
 }
